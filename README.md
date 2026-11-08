@@ -38,7 +38,7 @@ the minimap (bottom left) shows where the robot is.
 
 Walk into any course from its start end and a timer runs (simulation time, so a slow device or a pause changes nothing);
 reach the far end without falling or leaving the course for more than 2 s. Par is the time the policy's own autopilot
-(F) takes: beat it by 5 % for gold, within 1.3x for silver, any finish for bronze; the 21 courses the autopilot cannot clear (stepping stones; gaps; random blocks; ramp; tilted plates; scattered obstacles; waves; stones, medium; stones, hard; stone stairs up; stone stairs down; plank 40 cm; twin rails 25 cm; plank 22 cm (hard); twin rails 15 cm (hard); elevated demo course; stairs 20 cm; platform 30 cm; platform 45 cm; gaps 30 / 50 / 70 cm; ramp 25 deg) are marked expert. Best times and a ghost of your best run (replayed on the minimap and in the
+(F) takes: beat it by 5 % for gold, within 1.3x for silver, any finish for bronze; the 19 courses the autopilot cannot clear (stairs; stepping stones; gaps; ramp; scattered obstacles; waves; stones, medium; stones, hard; stone stairs up; stone stairs down; plank 40 cm; twin rails 25 cm; plank 22 cm (hard); twin rails 15 cm (hard); elevated demo course; platform 30 cm; platform 45 cm; gaps 30 / 50 / 70 cm; ramp 25 deg) are marked expert. Best times and a ghost of your best run (replayed on the minimap and in the
 view) stay in this browser only. Share (course map, or after a clear) draws a 1200 x 630 card with your path and bests
 to download, plus post text to copy.
 
@@ -82,4 +82,4 @@ share and adapt them for non-commercial purposes with attribution; commercial us
 See [LICENSE](LICENSE). Bundled third-party components keep their own licenses (MuJoCo Apache 2.0, three.js MIT,
 ROBOTIS K1 description Apache 2.0, Watch Your Step courses 0–7 MIT; see `licenses/`).
 
-Build: policy k1_full30k_it7000, index.html sha256 8527790451e6
+Build: policy k1_full30k_it7000, index.html sha256 12559d6df2bc
