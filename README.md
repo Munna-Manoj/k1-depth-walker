@@ -38,13 +38,13 @@ the minimap (bottom left) shows where the robot is.
 
 Walk into any course from its start end and a timer runs (simulation time, so a slow device or a pause changes nothing);
 reach the far end without falling or leaving the course for more than 2 s. Par is the time the policy's own autopilot
-(F) takes: beat it by 5 % for gold, within 1.3x for silver, any finish for bronze; the 19 courses the autopilot cannot clear (stairs; stepping stones; gaps; ramp; scattered obstacles; waves; stones, medium; stones, hard; stone stairs up; stone stairs down; plank 40 cm; twin rails 25 cm; plank 22 cm (hard); twin rails 15 cm (hard); elevated demo course; platform 30 cm; platform 45 cm; gaps 30 / 50 / 70 cm; ramp 25 deg) are marked expert. Best times and a ghost of your best run (replayed on the minimap and in the
+(F) takes: beat it by 5 % for gold, within 1.3x for silver, any finish for bronze; the 11 courses the autopilot cannot clear (stepping stones; gaps; stones, hard; stone stairs up; plank 40 cm; twin rails 25 cm; plank 22 cm (hard); twin rails 15 cm (hard); elevated demo course; platform 45 cm; gaps 30 / 50 / 70 cm) are marked expert. Best times and a ghost of your best run (replayed on the minimap and in the
 view) stay in this browser only. Share (course map, or after a clear) draws a 1200 x 630 card with your path and bests
 to download, plus post text to copy.
 
 Obstacles: a 10, 15 or 20 cm step-up or a 0.4 m wide, 40 cm tall block, placed on the open floor (never on a course or
 during a timed run), up to 6 at once. Each size is labelled with what this policy did when it walked at it on flat
-ground: the 10 cm step-up: stepped over it 6 / 6; the 15 cm step-up: stepped over it 4 / 6, fell at it 2 / 6; the 20 cm step-up: stepped over it 3 / 6, fell at it 3 / 6; the block: fell at it 6 / 6.
+ground: the 10 cm step-up: stepped over it 6 / 6; the 15 cm step-up: stepped over it 6 / 6; the 20 cm step-up: stepped over it 6 / 6; the block: stopped in front of it 2 / 6, fell at it 4 / 6.
 
 Autopilot and replay: ▶ in the course list (or P) lets the policy's own autopilot run a course for you; autopilot runs and runs
 you take over from are timed but never give a medal. Every timed run is recorded (full robot pose at 25 Hz): L replays the last
@@ -56,7 +56,7 @@ this off, e.g. for embedding).
 ## Running the demo
 
 Use a current browser with WebAssembly, WebGL, Web Workers and gzip decompression support (Chrome / Edge 80+, Safari
-16.4+ / iOS 16.4+, Firefox 113+). The self-contained page is about 8.3 MB; open it directly or host the folder as a
+16.4+ / iOS 16.4+, Firefox 113+). The self-contained page is about 12.4 MB; open it directly or host the folder as a
 static site (GitHub Pages publishes the root of the branch; `.nojekyll` is included). Choose **Low power** graphics (H)
 on slower laptops; **Auto** steps the resolution down by itself when the frame rate stays low.
 
@@ -71,7 +71,7 @@ visitor's device and controls a simulated robot: no installation, account or con
 - Robot description: [ROBOTIS AI Sapiens K1](https://github.com/ROBOTIS-GIT/ai_sapiens) (k1_rev1), Apache 2.0; see [license](licenses/ROBOTIS-K1-Apache-2.0.txt). The D435 depth camera on its head is our addition (the K1 description has none).
 - Terrain hub (courses 0–7) adapted from the [Watch Your Step web demo](https://leggedrobotics.github.io/watch-your-step/) by Matthias Heyrman, Chenhao Li, Ioannis Dadiotis and Marco Hutter. Upstream [code](https://github.com/leggedrobotics/foothold-prediction-model) is MIT-licensed; see [license](licenses/Watch-Your-Step-MIT.txt).
 
-The embedded K1 depth walking policy (K1 full30k it 7000 (placeholder); weights stored as float16) is separate from the Watch Your Step
+The embedded K1 depth walking policy (K1 full30k it 10000 (placeholder); weights stored as float32) is separate from the Watch Your Step
 foothold-prediction policy. Third-party licenses apply to their respective components.
 
 ## License
@@ -82,4 +82,4 @@ share and adapt them for non-commercial purposes with attribution; commercial us
 See [LICENSE](LICENSE). Bundled third-party components keep their own licenses (MuJoCo Apache 2.0, three.js MIT,
 ROBOTIS K1 description Apache 2.0, Watch Your Step courses 0–7 MIT; see `licenses/`).
 
-Build: policy k1_full30k_it7000, index.html sha256 12559d6df2bc
+Build: policy k1_full30k_it10000, index.html sha256 ed64f90ee765
