@@ -1,9 +1,5 @@
 # K1 Depth Walker — WYS v4 course
 
-> **Preliminary version.** The embedded policy is an early checkpoint of the K1 training (iteration 7,000 of the first
-> stage). It walks and climbs stairs, but it has not yet been trained on stepping stones, planks or rails, so most courses
-> are marked expert and the autopilot clears only a few. The page will be updated with the final K1 policy.
-
 Drive a simulated ROBOTIS AI Sapiens K1 humanoid through the Watch Your Step hub and 17 added capability courses (stepping stones,
 stone stairs, planks, twin rails, an elevated course, stairs, platforms, gaps, a ramp, boxes, rough ground) with a
 depth-based walking policy. Each visitor runs and controls an independent simulation in their browser.
@@ -38,13 +34,13 @@ the minimap (bottom left) shows where the robot is.
 
 Walk into any course from its start end and a timer runs (simulation time, so a slow device or a pause changes nothing);
 reach the far end without falling or leaving the course for more than 2 s. Par is the time the policy's own autopilot
-(F) takes: beat it by 5 % for gold, within 1.3x for silver, any finish for bronze; the 11 courses the autopilot cannot clear (stepping stones; gaps; stones, hard; stone stairs up; plank 40 cm; twin rails 25 cm; plank 22 cm (hard); twin rails 15 cm (hard); elevated demo course; platform 45 cm; gaps 30 / 50 / 70 cm) are marked expert. Best times and a ghost of your best run (replayed on the minimap and in the
+(F) takes: beat it by 5 % for gold, within 1.3x for silver, any finish for bronze; the 4 courses the autopilot cannot clear (stepping stones; twin rails 25 cm; twin rails 15 cm (hard); elevated demo course) are marked expert. Best times and a ghost of your best run (replayed on the minimap and in the
 view) stay in this browser only. Share (course map, or after a clear) draws a 1200 x 630 card with your path and bests
 to download, plus post text to copy.
 
 Obstacles: a 10, 15 or 20 cm step-up or a 0.4 m wide, 40 cm tall block, placed on the open floor (never on a course or
 during a timed run), up to 6 at once. Each size is labelled with what this policy did when it walked at it on flat
-ground: the 10 cm step-up: stepped over it 6 / 6; the 15 cm step-up: stepped over it 6 / 6; the 20 cm step-up: stepped over it 6 / 6; the block: stopped in front of it 2 / 6, fell at it 4 / 6.
+ground: the 10 cm step-up: stepped over it 6 / 6; the 15 cm step-up: stepped over it 6 / 6; the 20 cm step-up: stepped over it 6 / 6; the block: stopped in front of it 6 / 6.
 
 Autopilot and replay: ▶ in the course list (or P) lets the policy's own autopilot run a course for you; autopilot runs and runs
 you take over from are timed but never give a medal. Every timed run is recorded (full robot pose at 25 Hz): L replays the last
@@ -71,7 +67,7 @@ visitor's device and controls a simulated robot: no installation, account or con
 - Robot description: [ROBOTIS AI Sapiens K1](https://github.com/ROBOTIS-GIT/ai_sapiens) (k1_rev1), Apache 2.0; see [license](licenses/ROBOTIS-K1-Apache-2.0.txt). The D435 depth camera on its head is our addition (the K1 description has none).
 - Terrain hub (courses 0–7) adapted from the [Watch Your Step web demo](https://leggedrobotics.github.io/watch-your-step/) by Matthias Heyrman, Chenhao Li, Ioannis Dadiotis and Marco Hutter. Upstream [code](https://github.com/leggedrobotics/foothold-prediction-model) is MIT-licensed; see [license](licenses/Watch-Your-Step-MIT.txt).
 
-The embedded K1 depth walking policy (K1 full30k it 10000 (placeholder); weights stored as float32) is separate from the Watch Your Step
+The embedded K1 depth walking policy (K1-S2R it 5000 (stones + beams, rails fix; best so far, training continues); weights stored as float32) is separate from the Watch Your Step
 foothold-prediction policy. Third-party licenses apply to their respective components.
 
 ## License
@@ -82,4 +78,4 @@ share and adapt them for non-commercial purposes with attribution; commercial us
 See [LICENSE](LICENSE). Bundled third-party components keep their own licenses (MuJoCo Apache 2.0, three.js MIT,
 ROBOTIS K1 description Apache 2.0, Watch Your Step courses 0–7 MIT; see `licenses/`).
 
-Build: policy k1_full30k_it10000, index.html sha256 ed64f90ee765
+Build: policy k1s2r_rails_from_s2_10k_it5000, index.html sha256 1c03cf33c6b0
